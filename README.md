@@ -875,13 +875,13 @@ public LockProvider lockProvider(Supplier<DatabaseClient> databaseClientSupplier
 public LockProvider lockProvider(Supplier<DatabaseClient> databaseClientSupplier) {
 
         SpannerLockProvider.Configuration.builder()
-        .withDatabaseClient(databaseClientSupplier.get())
-        .withTableConfiguration(SpannerLockProvider.TableConfiguration.builder()
-            ...
-            // Custom table and column names
-            .build())
-        .withHostName("customHostName")
-        .build();
+            .withDatabaseClient(databaseClientSupplier.get())
+            .withTableConfiguration(SpannerLockProvider.TableConfiguration.builder()
+                ...
+                // Custom table and column names
+                .build())
+            .withHostName("customHostName")
+            .build();
 
         return new SpannerLockProvider(databaseClientSupplier.get());
 ```
